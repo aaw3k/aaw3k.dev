@@ -1,0 +1,156 @@
+.root {
+  position: relative;
+  padding-inline: clamp(1rem, 5%, 2rem);
+  margin-block: 2rem 7rem;
+}
+
+.container {
+  background: var(--background);
+  display: flex;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+
+  [data-theme='dark'] & {
+    background: var(--accents-5);
+  }
+}
+
+.skip {
+  position: absolute;
+  inset: 0;
+  inline-size: fit-content;
+  margin: auto;
+
+  & > a {
+    position: relative;
+    inset: var(--inset, -5rem 0);
+    color: var(--foreground);
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.3rem 1rem;
+    border-radius: var(--radius);
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: inset cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+    }
+
+    &:focus {
+      --inset: -1.67rem 0;
+    }
+  }
+}
+
+.avatar {
+  display: flex;
+  margin-inline-end: 1.7rem;
+
+  & > a {
+    --focus-offset: 0;
+    cursor: pointer;
+    inline-size: 2.625rem;
+    block-size: 2.625rem;
+    border-radius: 50%;
+  }
+
+  & img {
+    border: 0.125em solid var(--accents-4) !important;
+    border-radius: 50%;
+    transform: scale(var(--scale, 1)) translateZ(0);
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: transform 0.15s;
+    }
+
+    &:active {
+      --scale: 0.95;
+    }
+  }
+}
+
+.scrollSnapX {
+  overflow: auto hidden;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+
+  @media (hover: none) {
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      inline-size: 0;
+      block-size: 0;
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  inline-size: 100%;
+  overflow: auto;
+
+  & > div {
+    display: flex;
+  }
+
+  & a {
+    --focus-offset: -3px;
+    position: relative;
+    color: var(--foreground);
+    font-size: 0.938rem;
+    font-weight: 500;
+    padding: 0.5rem 0.8rem;
+    border-radius: var(--inline-radius);
+    filter: contrast(var(--filter, 1));
+    scroll-snap-align: start;
+
+    &:hover:not(.active) {
+      --filter: 0.75;
+    }
+
+    &.active:before {
+      --block-size: 0.25rem;
+      content: '';
+      position: absolute;
+      inset: calc(50% - (var(--block-size) / 2)) 0 0
+        calc(
+          (0rem - var(--block-size)) / 2 -
+            (var(--focus-weight) / 2 - (0rem - var(--focus-offset)))
+        );
+      background: var(--r-color, var(--accents-3));
+      inline-size: var(--block-size);
+      block-size: var(--block-size);
+      border-radius: 50%;
+      box-shadow: var(--shadow);
+    }
+  }
+
+  & button {
+    display: flex;
+    inline-size: max-content;
+    padding: 0.5rem;
+    border-radius: var(--inline-radius);
+
+    & > svg {
+      filter: contrast(var(--filter, 1));
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition: transform 250ms;
+        transform: rotate(var(--rotate, 0));
+      }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      &:hover > svg {
+        --filter: 0.75;
+        --rotate: 45deg;
+      }
+    }
+  }
+}

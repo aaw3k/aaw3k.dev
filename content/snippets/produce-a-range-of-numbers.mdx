@@ -1,0 +1,29 @@
+---
+title: Produce a range of numbers
+description: The function returns an array of all numbers that lie between the start and end numbers, including.
+date: '2022-01-30'
+tags: ['JavaScript']
+---
+
+```js
+const range = (options) => {
+  const { start = 0, end, step = 1 } = options;
+
+  if (!end || end <= start) {
+    return [];
+  }
+
+  return Array.from(
+    { length: Math.ceil((end - start) / step) },
+    (_, i) => i + step + start,
+  );
+};
+
+// Usage
+const r1 = range({ end: 10 });
+// [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+const r2 = range({ start: 10, end: 20 });
+// [ 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ]
+const r3 = range({ start: 10, end: 20, step: 2 });
+// [ 12, 13, 14, 15, 16 ]
+```

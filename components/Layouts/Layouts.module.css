@@ -1,0 +1,42 @@
+.root {
+  max-inline-size: var(--main-content);
+  margin-inline: auto;
+}
+
+.background {
+  pointer-events: none;
+
+  &::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: url(/static/images/noise.png) repeat;
+    opacity: 0.03;
+    z-index: -1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    overflow: hidden;
+    inset: 0;
+    opacity: 0.2;
+    inline-size: 40rem;
+    block-size: 17rem;
+    margin: 0 auto;
+    border-radius: 10rem;
+    box-shadow: 1rem 15rem 18rem var(--r-color, var(--foreground));
+    transform: rotate(15deg) translateY(-175%) translateZ(0px);
+    z-index: -2;
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: box-shadow 0.4s ease-in-out;
+    }
+  }
+}
+
+.main {
+  line-height: 1.6;
+  padding-inline: clamp(1rem, 5%, 2rem);
+  scroll-margin-block-start: 1.2rem;
+}

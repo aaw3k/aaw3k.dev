@@ -1,0 +1,27 @@
+.root {
+  padding-inline: clamp(1rem, 5%, 2rem);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1rem;
+  border-block-start: 1px dashed var(--accents-3);
+
+  & > p {
+    color: var(--accents-2);
+    font-size: 0.938rem;
+    inline-size: fit-content;
+    padding-block: 0.5em 5rem;
+  }
+}
+
+.accessibilityText {
+  overflow: hidden;
+  position: absolute;
+  color: var(--accents-2);
+  inline-size: 0;
+  opacity: 1;
+}

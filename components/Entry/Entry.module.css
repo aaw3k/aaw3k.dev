@@ -1,0 +1,84 @@
+.root {
+  --speed-curve: cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--accents-5);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--accents-4);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transform: scaleX(var(--scale-x, 1)) scaleY(var(--scale-y, 1));
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: transform 0.15s var(--speed-curve);
+  }
+
+  &:hover {
+    --scale-x: 1.01;
+    --scale-y: 1.01;
+  }
+
+  &.empty {
+    position: relative;
+
+    &:before {
+      content: '☇ Not available!';
+      position: absolute;
+      pointer-events: none;
+      inset: 0;
+      color: var(--accents-2);
+      font-size: 0.875rem;
+      inline-size: fit-content;
+      margin: auto;
+      opacity: var(--opacity, 0);
+      transform: scale(var(--scale, 0.8))
+        translateY(var(--transform-y, -1.5rem));
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition: transform 0.3s var(--speed-curve),
+          opacity 0.2s var(--speed-curve);
+      }
+
+      @media (hover: none) {
+        --opacity: 1;
+        --scale: 1;
+        --transform-y: -1.5rem;
+      }
+    }
+
+    &:hover:before {
+      --opacity: 1;
+      --scale: 1;
+      --transform-y: -1.5rem;
+    }
+  }
+
+  & img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+
+  & h3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+
+  & span {
+    color: var(--accents-2);
+    font-size: 0.938rem;
+  }
+
+  & p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: var(--accents-1);
+    margin-block-start: 0.5rem;
+    overflow: hidden;
+  }
+}

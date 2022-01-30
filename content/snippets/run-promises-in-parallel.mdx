@@ -1,0 +1,17 @@
+---
+title: Run promises in parallel
+description: To run multiple promises in series, pass an array of promises to Promise.all(). The first promise to resolve will be passed to the callback.
+
+date: '2022-01-30'
+tags: ['JavaScript']
+---
+
+```js
+async function updateUserInfo() {
+  await Promise.all([
+    updateUserName({ id: 1, name: 'Clown 🤡' }),
+    sendUpdateNotification({ id: 1 }),
+    cleanupOldLogs({ id: 1, cleanAll: true }),
+  ]);
+}
+```

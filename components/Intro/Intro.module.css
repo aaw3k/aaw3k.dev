@@ -1,0 +1,47 @@
+.root {
+  display: flex;
+  align-items: center;
+  margin-block-end: 6rem;
+}
+
+.person {
+  inline-size: fit-content;
+
+  & > h1 {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  & > span {
+    color: var(--accents-2);
+    font-size: 0.938rem;
+  }
+
+  & > p {
+    color: var(--accents-1);
+    max-inline-size: calc(var(--main-content) - 9rem);
+    margin-block-start: 2rem;
+  }
+}
+
+.social {
+  display: flex;
+  gap: 0.5rem;
+  margin-block-start: 1.5rem;
+
+  & > a {
+    background: var(--a-background, var(--accents-5));
+    color: var(--a-color, var(--accents-2));
+    font-size: 0.875rem;
+    padding: 0.25rem 0.7rem;
+    border: 1px solid var(--accents-4);
+    border-radius: var(--radius);
+    box-shadow: var(--a-shadow, none);
+
+    &:hover {
+      --a-color: var(--r-color, var(--blue));
+      --a-background: var(--background);
+      --a-shadow: var(--shadow);
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.root {
+  position: absolute;
+  background: var(--accents-5);
+  color: var(--accents-1);
+  font-size: 0.813rem;
+  padding: 0.4em 0.6em;
+  border: 1px solid var(--accents-4);
+  border-radius: var(--inline-radius);
+  box-shadow: var(--shadow);
+}
+
+.shortcut {
+  display: flex;
+  align-items: center;
+  padding: 0.2em 0.2em 0.2em 0.6em;
+
+  & > span {
+    background: var(--accents-4);
+    color: var(--accents-2);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.2em 0.6em;
+    margin-inline-start: 0.3rem;
+    border-radius: var(--inline-radius);
+  }
+}

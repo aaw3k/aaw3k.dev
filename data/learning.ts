@@ -1,0 +1,111 @@
+/* eslint import/no-anonymous-default-export: [2, {"allowArray": true}] */
+export default [
+  {
+    name: '1.1.1.1',
+    text: 'Privacy for your web browsing.',
+    category: 'Tools',
+    url: 'https://1.1.1.1/',
+  },
+  {
+    name: '1Password',
+    text: 'Password manager for all your passwords.',
+    category: 'Tools',
+    url: 'https://1password.com/',
+  },
+  {
+    name: 'Blender',
+    text: '3D modeling and animation software.',
+    category: 'Tools',
+    url: 'https://www.blender.org/',
+  },
+  {
+    name: 'Dribbble',
+    text: 'Design inspiration and community.',
+    category: 'Inspiration',
+    url: 'https://dribbble.com/',
+  },
+  {
+    name: 'Figma',
+    text: 'Design and prototyping software.',
+    category: 'Tools',
+    url: 'https://figma.com/',
+  },
+  {
+    name: 'GitHub CLI',
+    text: 'Command line interface for GitHub.',
+    category: 'Tools',
+    url: 'https://cli.github.com/',
+  },
+  {
+    name: 'GitHub Mobile',
+    text: 'Mobile version of GitHub.',
+    category: 'Tools',
+    url: 'https://github.com/mobile',
+  },
+  {
+    name: 'Loom',
+    text: 'Video messaging for work.',
+    category: 'Tools',
+    url: 'https://www.loom.com/',
+  },
+  {
+    name: 'MagicaVoxel',
+    text: '3D modeling software.',
+    category: 'Tools',
+    url: 'https://www.voxelmade.com/magicavoxel/',
+  },
+  {
+    name: 'Next.js',
+    text: 'Server-side rendering framework.',
+    category: 'Tools',
+    url: 'https://nextjs.org/',
+  },
+  {
+    name: 'Notion',
+    text: 'Note taking and to-do app.',
+    category: 'Tools',
+    url: 'https://www.notion.so/',
+  },
+  {
+    name: 'Oh My Posh',
+    text: 'Prompt theme engine for any shell.',
+    category: 'Tools',
+    url: 'https://ohmyposh.dev/',
+  },
+  {
+    name: 'Oku',
+    text: 'Social book tracking app.',
+    category: 'Tools',
+    url: 'https://oku.club/',
+  },
+  {
+    name: 'Tailwind CSS',
+    text: 'CSS framework that focuses on utility.',
+    category: 'Tools',
+    url: 'https://tailwindcss.com/',
+  },
+  {
+    name: 'Texts',
+    text: 'One inbox. All your messages.',
+    category: 'Tools',
+    url: 'https://texts.com/',
+  },
+  {
+    name: 'VSCode',
+    text: 'Code editor for developers.',
+    category: 'Tools',
+    url: 'https://code.visualstudio.com/',
+  },
+  {
+    name: 'Vercel',
+    text: 'Deployment platform for static websites.',
+    category: 'Tools',
+    url: 'https://vercel.com/',
+  },
+  {
+    name: 'Windows Terminal',
+    text: 'Terminal emulator for Windows(11).',
+    category: 'Tools',
+    url: 'https://docs.microsoft.com/en-us/windows/terminal/install',
+  },
+];

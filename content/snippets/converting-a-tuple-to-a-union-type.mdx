@@ -1,0 +1,17 @@
+---
+title: Converting a tuple to a union type
+description: TypeScript lets you create a union type from a tuple type. This is useful when you want to create a type that is a union of multiple types.
+date: '2022-01-30'
+tags: ['TypeScript']
+---
+
+```ts
+type UnionFromTuple<Tuple extends readonly (string | number | boolean)[]> =
+  Tuple[number];
+
+const animals = ['🐶', '🙀', '🐮'] as const;
+
+type Animal = UnionFromTuple<typeof animals>;
+
+//  type Animal = '🐶' | '🙀' | '🐮';
+```
