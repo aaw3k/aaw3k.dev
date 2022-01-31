@@ -12,7 +12,6 @@ const getParams = (className = ``) => {
   return [lang.split(`language-`).pop().split(`{`).shift()].concat(
     params.split(`&`).reduce((merged, param) => {
       const [key, value] = param.split(`=`);
-
       merged[key] = value;
       return merged;
     }, {}),
@@ -37,7 +36,6 @@ const getCodeData = (children) => {
   if (child) {
     return {
       source: child.props.children.trim(),
-
       className: child.props.className,
     };
   }
