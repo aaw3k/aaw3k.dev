@@ -1,3 +1,22 @@
+import clsx from 'clsx';
+export { clsx as cx };
+
+export const isExternalLink = (url: string) => {
+  if (typeof url === 'string') {
+    return url.startsWith('http');
+  }
+
+  return false;
+};
+
+export const isEmptyLink = (url: string) => {
+  if (typeof url === 'string') {
+    return url === '';
+  }
+
+  return false;
+};
+
 type formatDateProps = {
   timestamp?: number | string | null;
   year?: 'numeric' | '2-digit';

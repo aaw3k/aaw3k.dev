@@ -1,6 +1,5 @@
-// Langouarge: TypeScript
-
-import Link from 'next/link';
+import { Link } from 'components/Link';
+import { isExternalLink } from 'lib/utils';
 import styles from './CardLink.module.css';
 
 type Props = {
@@ -15,45 +14,13 @@ const List = ({ children }: { children?: React.ReactNode }) => {
 };
 
 const Item = ({ title, text, link, category }: Props) => {
-  const isInternal = (href: string) =>
-    href && (href.startsWith('/') || href.startsWith('#'));
-
-  const CustomLink = ({
-    href,
-    children,
-  }: {
-    href: string;
-    children: React.ReactNode;
-  }) => {
-    if (isInternal(href)) {
-      return (
-        <Link href={href}>
-          <a className={styles.item}>{children}</a>
-        </Link>
-      );
-    }
-
-    return (
-      <>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href={link}
-          className={styles.item}
-        >
-          {children}
-        </a>
-      </>
-    );
-  };
-
   return (
-    <CustomLink href={link}>
+    <Link to={link} className={styles.item}>
       <h3>{title}</h3>
       <span>{category}</span>
       <p>{text}</p>
 
-      {!isInternal(link) ? (
+      {isExternalLink(link) ? (
         <div className={styles.external}>
           <svg
             width={14}
@@ -79,7 +46,7 @@ const Item = ({ title, text, link, category }: Props) => {
           </svg>
         </div>
       ) : null}
-    </CustomLink>
+    </Link>
   );
 };
 

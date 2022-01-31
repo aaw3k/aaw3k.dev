@@ -1,6 +1,7 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+import { Link } from 'components/Link';
+import { cx, isExternalLink, isEmptyLink } from 'lib/utils';
 
 import styles from './Entry.module.css';
 
@@ -13,49 +14,15 @@ type Props = {
 };
 
 export const Entry = ({ title, image, text, link, meta }: Props) => {
-  const isInternal = (href: string) =>
-    href && (href.startsWith('/') || href.startsWith('#'));
-  const isEmpty = (href: string) => href && href.startsWith('');
-
-  const Container = ({
-    href,
-    children,
-  }: {
-    href: string;
-    children: React.ReactNode;
-  }) => {
-    if (isInternal(href)) {
-      return (
-        <Link href={href}>
-          <a className={styles.root}>{children}</a>
-        </Link>
-      );
-    }
-
-    if (!isEmpty(href)) {
-      return (
-        <>
-          <div className={`${styles.root} ${styles.empty}`}>{children}</div>
-        </>
-      );
-    }
-
-    return (
-      <>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href={link}
-          className={styles.root}
-        >
-          {children}
-        </a>
-      </>
-    );
-  };
-
   return (
-    <Container href={link}>
+    <Link
+      to={link}
+      className={cx(styles.root, [
+        {
+          [styles.empty]: isEmptyLink(link),
+        },
+      ])}
+    >
       {image && (
         <div>
           <Image src={image} alt={title} width={48} height={48} quality={100} />
@@ -65,7 +32,7 @@ export const Entry = ({ title, image, text, link, meta }: Props) => {
         <h3>
           {title}
 
-          {isEmpty(link) && !isInternal(link) ? (
+          {isExternalLink(link) ? (
             <svg
               width={20}
               height={20}
@@ -103,6 +70,6 @@ export const Entry = ({ title, image, text, link, meta }: Props) => {
 
         <p>{text}</p>
       </div>
-    </Container>
+    </Link>
   );
 };
