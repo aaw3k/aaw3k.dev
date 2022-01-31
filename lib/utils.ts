@@ -1,3 +1,6 @@
+import clsx from 'clsx';
+export { clsx as cx };
+
 type formatDateProps = {
   timestamp?: number | string | null;
   year?: 'numeric' | '2-digit';
