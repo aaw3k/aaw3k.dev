@@ -6,7 +6,7 @@ import {
   useReducedMotion,
   Variants,
 } from 'framer-motion';
-import cx from 'clsx';
+import { cx } from 'lib/utils';
 
 import styles from './Tooltip.module.css';
 

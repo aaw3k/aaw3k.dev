@@ -1,5 +1,5 @@
 import NextLink from 'next/link';
-import cx from 'clsx';
+import { cx } from 'lib/utils';
 
 import styles from './Link.module.css';
 
