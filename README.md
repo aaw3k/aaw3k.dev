@@ -1,6 +1,6 @@
 # my-site
 
-Personal site built with [Next.js](https://nextjs.org/), [MDX](https://github.com/mdx-js/mdx), [Framer Motion](https://www.framer.com/motion/) and styled with [CSS Modules](https://nextjs.org/docs/basic-features/built-in-css-support#adding-component-level-css).
+Personal site built with [Next.js](https://nextjs.org/), [MDX](https://github.com/kentcdodds/mdx-bundler), [Framer Motion](https://www.framer.com/motion/) and styled with [CSS Modules](https://nextjs.org/docs/basic-features/built-in-css-support#adding-component-level-css).
 
 ## Running Locally
 
