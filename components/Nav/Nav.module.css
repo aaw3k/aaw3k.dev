@@ -127,7 +127,7 @@
       inline-size: var(--block-size);
       block-size: var(--block-size);
       border-radius: 50%;
-      box-shadow: var(--shadow);
+      box-shadow: 0 0 0 0.125em var(--color-shadow, var(--background));
     }
   }
 
