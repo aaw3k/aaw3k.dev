@@ -1,12 +1,35 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'components/Link';
 import styles from './Intro.module.css';
 
+const KAOMOJI = ['(. ❛ ᴗ ❛.)', '( ͡• ͜ʖ ͡• )', '(◠◇◠)づ'];
+
+const getRandomKaomoji = (preclude: string) => {
+  const kaomoji = preclude
+    ? KAOMOJI.filter((kaomoji) => kaomoji !== preclude)
+    : KAOMOJI;
+
+  return kaomoji[Math.trunc(kaomoji.length * Math.random())];
+};
+
 export const Intro = () => {
+  const [kaomoji, setKaomoji] = useState(KAOMOJI[0]);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setKaomoji((kaomoji) => getRandomKaomoji(kaomoji));
+    }, 1000);
+
+    return () => {
+      window.clearInterval(interval);
+    };
+  }, []);
+
   return (
     <div className={styles.root}>
       <div className={styles.person}>
         <h1>Sławek Jaskulski</h1>
-        <span>I&apos;m a clown (. ❛ ᴗ ❛.)</span>
+        <span>I&apos;m a clown {kaomoji}</span>
         <p>
           My goal is pretty simple, build great things with great people. I like
           to develop clean and interactive applications with React / Next.js.
