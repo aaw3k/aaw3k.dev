@@ -19,7 +19,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout =
     Component.getLayout ||
     ((page) => (
-      <ThemeProvider defaultTheme="light">
+      <ThemeProvider defaultTheme="system">
         <SiteLayout>{page}</SiteLayout>
       </ThemeProvider>
     ));
