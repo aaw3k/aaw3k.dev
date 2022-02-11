@@ -3,6 +3,12 @@ import { Children, useState, useCallback, useEffect } from 'react';
 import { theme } from 'lib/prism';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import rangeParser from 'parse-numeric-range';
+import {
+  motion,
+  AnimatePresence,
+  useReducedMotion,
+  Variants,
+} from 'framer-motion';
 
 import styles from './Code.module.css';
 
@@ -66,41 +72,71 @@ const useCodeToClipboard = (
   return [copyStatus, copy];
 };
 
+const variants: Variants = {
+  hidden: { opacity: 0, scale: 0.5 },
+  enter: { opacity: 1, scale: 1 },
+  exit: { opacity: 0, scale: 0.5 },
+};
+
 export function Code({ children }: { children?: React.ReactNode }) {
   const { source, className } = getCodeData(children);
   const [language, { bg = `` }] = getParams(className);
-  const shouldHighlightLine = calculateLinesToHighlight(bg);
-
   const [isCopied, setCopied] = useCodeToClipboard(source);
+
+  const shouldHighlightLine = calculateLinesToHighlight(bg);
+  const shouldReduceMotion = useReducedMotion();
+
+  const iconCheck: Variants = {
+    hidden: {
+      pathLength: 0,
+    },
+    visible: {
+      pathLength: 1,
+      transition: {
+        duration: shouldReduceMotion ? 0 : 0.25,
+      },
+    },
+  };
 
   return (
     <div className={styles.root}>
       <button onClick={setCopied}>
         <span className={isCopied ? styles.active : (null as any)}>
-          <svg
-            width={16}
-            height={16}
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {isCopied ? (
-              <path
-                d="M14 4l-8.25 8L2 8.364"
-                stroke="var(--green)"
-                strokeWidth={1.7}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            ) : (
-              <path
-                d="M10.333 2.75v-.583C10.333 1.522 9.811 1 9.167 1h-7C1.522 1 1 1.522 1 2.167v7c0 .644.522 1.166 1.167 1.166h.583m2.917 3.5v-7c0-.644.522-1.166 1.166-1.166h7c.645 0 1.167.522 1.167 1.166v7c0 .645-.522 1.167-1.167 1.167h-7a1.167 1.167 0 01-1.166-1.167z"
-                stroke="var(--accents-2)"
-                strokeWidth={1.7}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            )}
-          </svg>
+          <AnimatePresence exitBeforeEnter>
+            <motion.svg
+              key={isCopied ? 'copied' : 'empty'}
+              fill="none"
+              width={16}
+              height={16}
+              initial="hidden"
+              animate="enter"
+              exit="exit"
+              variants={variants}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.15 }}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {isCopied ? (
+                <motion.path
+                  d="M2 8l4 4 8-8"
+                  stroke="var(--green)"
+                  strokeWidth={1.5}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  variants={iconCheck}
+                  initial="hidden"
+                  animate="visible"
+                />
+              ) : (
+                <motion.path
+                  d="M10 3V2a1 1 0 00-1-1H2a1 1 0 00-1 1v7a1 1 0 001 1h1m4 5h7a1 1 0 001-1V7a1 1 0 00-1-1H7a1 1 0 00-1 1v7a1 1 0 001 1z"
+                  stroke="var(--accents-2)"
+                  strokeWidth={1.5}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              )}
+            </motion.svg>
+          </AnimatePresence>
         </span>
       </button>
       <span>{language}</span>
