@@ -130,27 +130,47 @@
       box-shadow: 0 0 0 0.125em var(--color-shadow, var(--background));
     }
   }
+}
 
-  & button {
-    display: flex;
-    inline-size: max-content;
-    padding: 0.5rem;
-    border-radius: var(--inline-radius);
+.themeSwitch {
+  --size: 1.25rem;
+  --fill: var(--accents-2);
+  --fill-hover: var(--accents-1);
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  inline-size: var(--size);
+  block-size: var(--size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 
-    & > svg {
-      filter: contrast(var(--filter, 1));
+  & > svg {
+    inline-size: 100%;
+    block-size: 100%;
+    stroke-linecap: round;
+  }
+}
 
-      @media (prefers-reduced-motion: no-preference) {
-        transition: transform 250ms;
-        transform: rotate(var(--rotate, 0));
-      }
+.sunAndMoon {
+  & :is(.moon, .sun) {
+    fill: var(--accents-5);
+    stroke: var(--fill);
+    stroke-width: 2px;
+
+    .themeSwitch:is(:hover, :focus-visible) > & {
+      stroke: var(--fill-hover);
     }
+  }
 
-    @media (prefers-reduced-motion: no-preference) {
-      &:hover > svg {
-        --filter: 0.75;
-        --rotate: 45deg;
-      }
+  & .sunBeams {
+    stroke: var(--fill);
+    stroke-width: 2px;
+
+    .themeSwitch:is(:hover, :focus-visible) & {
+      stroke: var(--fill-hover);
     }
   }
 }
