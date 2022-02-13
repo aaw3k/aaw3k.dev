@@ -30,18 +30,24 @@
   margin-block-start: 1.5rem;
 
   & > a {
-    background: var(--a-background, var(--accents-5));
-    color: var(--a-color, var(--accents-2));
+    background: var(--accents-5);
+    color: var(--accents-2);
     font-size: 0.875rem;
     padding: 0.25rem 0.7rem;
-    border: 1px solid var(--accents-4);
+    border: 1px solid var(--a-border, var(--accents-4));
     border-radius: var(--radius);
     box-shadow: var(--a-shadow, none);
+    transform: scaleX(var(--scale-x, 1)) scaleY(var(--scale-y, 1));
 
     &:hover {
-      --a-color: var(--r-color, var(--blue));
-      --a-background: var(--background);
+      --a-border: var(--accents-3);
       --a-shadow: var(--shadow);
+      --scale-x: 1.02;
+      --scale-y: 1.02;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: transform 0.15s ease-in-out;
     }
   }
 }
