@@ -27,7 +27,7 @@ const Snippets: NextPage<Props> = ({ items }) => {
   return (
     <Layout
       title="Code Snippets"
-      description="This is a collection of code snippets that can be copied and pasted."
+      description="That's a collection of code snippets that can be copied and pasted."
     >
       <SnippetPost.List>
         {items

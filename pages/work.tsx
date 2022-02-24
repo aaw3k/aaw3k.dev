@@ -10,7 +10,7 @@ const Work: NextPage = () => {
   return (
     <Layout
       title="Work"
-      description="Some things I have done in the past."
+      description="Some things I've done in the past."
       color="red"
     >
       <Section>

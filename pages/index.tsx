@@ -14,10 +14,7 @@ const Home: NextPage = () => {
     <Layout>
       <Intro />
 
-      <Section
-        heading="Work"
-        description="Some things I have done in the past."
-      >
+      <Section heading="Work" description="Some things I've done in the past.">
         {work.map((item, i) => {
           const { name, thumbnail, description, technology, url } = item;
           return (
@@ -35,7 +32,7 @@ const Home: NextPage = () => {
 
       <Section
         heading="Snippets"
-        description="This is a collection of code snippets that can be copied and pasted."
+        description="Collection of code snippets that can be copied and pasted."
       >
         {snippets
           .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)))
