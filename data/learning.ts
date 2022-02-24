@@ -32,7 +32,7 @@ export default [
   },
   {
     name: 'GitHub CLI',
-    text: 'Command line interface for GitHub.',
+    text: 'Command-line interface for GitHub.',
     category: 'Tools',
     url: 'https://cli.github.com/',
   },
