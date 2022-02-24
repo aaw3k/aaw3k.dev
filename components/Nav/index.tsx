@@ -16,8 +16,8 @@ const navData = [
     path: '/snippets',
   },
   {
-    name: 'Learning',
-    path: '/learning',
+    name: 'Stack',
+    path: '/stack',
   },
 ];
 

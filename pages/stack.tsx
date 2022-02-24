@@ -4,13 +4,13 @@ import { Layout } from 'components/Layouts';
 import { Section } from 'components/Section';
 import { CardLink } from 'components/CardLink';
 
-import data from 'data/learning';
+import data from 'data/stack';
 
-const Learning: NextPage = () => {
+const Stack: NextPage = () => {
   return (
     <Layout
-      title="Learning"
-      description="My go-to links when it comes to resources, inspiration and tools."
+      title="Stack"
+      description="My favorite tools and software that I use every day."
       color="green"
     >
       <Section>
@@ -33,4 +33,4 @@ const Learning: NextPage = () => {
   );
 };
 
-export default Learning;
+export default Stack;
