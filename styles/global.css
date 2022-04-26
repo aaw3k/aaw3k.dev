@@ -84,6 +84,12 @@
   font-family: var(--font-sans);
   font-size: 16px;
   scroll-behavior: smooth;
+  overflow-y: scroll;
+
+  @supports (scrollbar-gutter: stable) {
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+  }
 }
 
 body {
