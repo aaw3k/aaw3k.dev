@@ -1,0 +1,27 @@
+---
+title: Create objects from arrays
+description: With this function, you can create an object composed of an array of objects with an 'id' key and any numeral of additional properties.
+date: '2022-05-10'
+tags: ['JavaScript']
+---
+
+```js
+const indexOn = (array, key) =>
+  array.reduce((object, value) => {
+    const { [key]: id, ...data } = value;
+    object[id] = data;
+
+    return object;
+  }, {});
+
+// Usage
+indexOn(
+  [
+    { id: 1, name: 'John', age: 30 },
+    { id: 2, name: 'Mary', age: 25 },
+  ],
+  'id',
+);
+
+// [ { id: 1, name: 'John', age: 30 }, { id: 2, name: 'Mary', age: 25 } ]
+```

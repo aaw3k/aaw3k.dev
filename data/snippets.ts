@@ -1,6 +1,13 @@
 /* eslint import/no-anonymous-default-export: [2, {"allowArray": true}] */
 export default [
   {
+    title: 'Create objects from arrays',
+    description: `With this function, you can create an object composed of an array of objects with an 'id' key and any numeral of additional properties.`,
+    date: '2022-05-10',
+    tags: ['JavaScript'],
+    slug: 'create-objects-from-arrays',
+  },
+  {
     title: 'Create an interval hook',
     description: `To create an interval hook, you need to pass in a function that will be called every interval with the arguments passed in the hook.`,
     date: '2022-02-28',
@@ -13,12 +20,5 @@ export default [
     date: '2022-01-30',
     tags: ['TypeScript'],
     slug: 'convert-a-tuple-to-a-union-type',
-  },
-  {
-    title: 'Create a range of numbers',
-    description: `The function returns an array of all numbers that fall between the start and end numbers.`,
-    date: '2022-01-30',
-    tags: ['JavaScript'],
-    slug: 'create-a-range-of-numbers',
   },
 ];
