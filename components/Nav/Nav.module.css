@@ -116,6 +116,7 @@
 
     &.active:before {
       --block-size: 0.25rem;
+      --color-shadow: var(--accents-5);
       content: '';
       position: absolute;
       inset: calc(50% - (var(--block-size) / 2)) 0 0
