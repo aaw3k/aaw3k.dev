@@ -19,6 +19,7 @@ export const ThemeSwitch = () => {
     <Tooltip label={theme ? 'Light mode' : 'Dark mode'}>
       <button
         className={styles.themeSwitch}
+        aria-label={theme ? 'Light mode' : 'Dark mode'}
         onClick={() => setTheme(theme ? 'light' : 'dark')}
       >
         <svg
