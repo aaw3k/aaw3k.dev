@@ -48,7 +48,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const { code } = await bundleMDX({
     source: content,
-    xdmOptions(options) {
+    mdxOptions(options) {
       options.remarkPlugins = [...(options?.remarkPlugins ?? [])];
 
       return options;

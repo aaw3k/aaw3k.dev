@@ -58,6 +58,9 @@ export function Layout({
   children,
   color = 'blue',
 }: Props) {
+  const metaTitle = title ? `${title} - Sławek Jaskulski` : '';
+  const metaDescription = description ? description : '';
+
   useEffect(() => {
     document.documentElement.style.setProperty('--r-color', colors[color]);
   });
@@ -66,20 +69,14 @@ export function Layout({
     <>
       {title && (
         <Head>
-          <title>
-            {title ? `${title} - ` : ''}
-            Sławek Jaskulski
-          </title>
-          <meta
-            name="og:title"
-            content={`${title ? `${title} - ` : ''}Sławek Jaskulski`}
-          />
-          <meta name="description" content={description} />
-          <meta name="og:description" content={description} />
+          <title>{metaTitle}</title>
+          <meta name="og:title" content={metaTitle} />
+          <meta name="description" content={metaDescription} />
+          <meta name="og:description" content={metaDescription} />
         </Head>
       )}
 
-      <Header title={title} description={description} />
+      <Header title={title} description={metaDescription} />
 
       {children}
     </>
