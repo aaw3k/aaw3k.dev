@@ -5,8 +5,8 @@ Personal site built with [Next.js](https://nextjs.org/), [MDX](https://github.co
 ## Running Locally
 
 ```bash
-$ git clone https://github.com/aaw3k/aaw3k.dev.git
-$ cd aaw3k.dev
-$ yarn
-$ yarn dev
+git clone https://github.com/aaw3k/aaw3k.dev.git
+cd aaw3k.dev
+yarn
+yarn dev
 ```
