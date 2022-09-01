@@ -6,7 +6,7 @@ import { Section } from 'components/Section';
 import { Entry } from 'components/Entry';
 import { formatDate } from 'lib/utils';
 
-import work from 'data/work';
+// import work from 'data/work';
 import snippets from 'data/snippets';
 
 const Home: NextPage = () => {
@@ -14,7 +14,7 @@ const Home: NextPage = () => {
     <Layout>
       <Intro />
 
-      <Section heading="Work" description="Some things I've done in the past.">
+      {/* <Section heading="Work" description="Some things I've done in the past.">
         {work.map((item, i) => {
           const { name, thumbnail, description, technology, url } = item;
           return (
@@ -28,7 +28,7 @@ const Home: NextPage = () => {
             />
           );
         })}
-      </Section>
+      </Section> */}
 
       <Section
         heading="Snippets"

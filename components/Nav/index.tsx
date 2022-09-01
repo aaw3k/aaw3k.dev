@@ -7,10 +7,10 @@ import Image from 'next/image';
 import styles from './Nav.module.css';
 
 const navData = [
-  {
-    name: 'Work',
-    path: '/work',
-  },
+  // {
+  //   name: 'Work',
+  //   path: '/work',
+  // },
   {
     name: 'Snippets',
     path: '/snippets',
