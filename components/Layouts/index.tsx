@@ -40,7 +40,9 @@ export function SiteLayout({ children }: { children?: React.ReactNode }) {
         <link rel="icon" type="image/x-icon" href="/favicon.png" />
       </Head>
 
-      <div className={styles.background} />
+      <div className={styles.background}>
+        <div className={styles.gradient} />
+      </div>
       <Nav />
 
       <main className={styles.main} id="skip">
