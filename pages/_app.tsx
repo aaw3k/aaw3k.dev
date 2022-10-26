@@ -6,6 +6,7 @@ import type { AppProps } from 'next/app';
 
 import { ThemeProvider } from 'next-themes';
 import { SiteLayout } from 'components/Layouts';
+import { Analytics } from '@vercel/analytics/react';
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -21,6 +22,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
     ((page) => (
       <ThemeProvider defaultTheme="system">
         <SiteLayout>{page}</SiteLayout>
+        <Analytics />
       </ThemeProvider>
     ));
 
