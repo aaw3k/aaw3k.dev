@@ -25,7 +25,13 @@ export const Entry = ({ title, image, text, link, meta }: Props) => {
     >
       {image && (
         <div>
-          <Image src={image} alt={title} width={48} height={48} quality={100} />
+          <Image
+            src={image}
+            alt={title ?? ''}
+            width={48}
+            height={48}
+            quality={100}
+          />
         </div>
       )}
       <div>
