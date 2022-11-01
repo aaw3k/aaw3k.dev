@@ -45,8 +45,8 @@ export const Nav = () => {
             <Image
               src={'/static/images/avatar.jpg'}
               alt={'Picture of the author'}
-              width={48}
-              height={48}
+              width={42}
+              height={42}
               priority={true}
             />
           </NextLink>

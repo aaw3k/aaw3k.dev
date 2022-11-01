@@ -7,6 +7,7 @@
 .container {
   background: var(--background);
   display: flex;
+  flex-direction: row;
   padding: 0.625rem 1.25rem;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -42,14 +43,14 @@
 }
 
 .avatar {
-  display: flex;
   margin-inline-end: 1.7rem;
 
   & > a {
     --focus-offset: 0;
+    display: flex;
     cursor: pointer;
-    inline-size: 2.625rem;
-    block-size: 2.625rem;
+    inline-size: 100%;
+    block-size: 100%;
     border-radius: 50%;
   }
 
@@ -91,6 +92,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex: 1;
   gap: 1rem;
   inline-size: 100%;
   overflow: auto;
