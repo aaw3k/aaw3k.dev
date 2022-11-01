@@ -16,12 +16,9 @@ const Item = ({ slug, title, description, children }: Props) => {
   return (
     <div className={styles.content}>
       <Link href={`/snippets/${slug}`}>
-        <a>
-          <h2>{title}</h2>
-        </a>
+        <h2>{title}</h2>
       </Link>
       <p>{description}</p>
-
       {children}
     </div>
   );

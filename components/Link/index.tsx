@@ -37,8 +37,8 @@ export const Link = ({ to, href, className, underline, children }: Props) => {
   }
 
   return (
-    <NextLink href={url}>
-      <a className={classes}>{children}</a>
+    <NextLink href={url} className={classes}>
+      {children}
     </NextLink>
   );
 };

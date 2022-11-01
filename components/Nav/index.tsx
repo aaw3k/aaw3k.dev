@@ -26,8 +26,8 @@ const NavItem = ({ href, text }: { href: string; text: string }) => {
   const isActive = router.asPath === href;
 
   return (
-    <NextLink href={href}>
-      <a className={isActive ? styles.active : ''}>{text}</a>
+    <NextLink href={href} className={isActive ? styles.active : ''}>
+      {text}
     </NextLink>
   );
 };
@@ -42,15 +42,13 @@ export const Nav = () => {
 
         <div className={styles.avatar}>
           <NextLink href="/">
-            <a>
-              <Image
-                src={'/static/images/avatar.jpg'}
-                alt={'Picture of the author'}
-                width={48}
-                height={48}
-                priority={true}
-              />
-            </a>
+            <Image
+              src={'/static/images/avatar.jpg'}
+              alt={'Picture of the author'}
+              width={48}
+              height={48}
+              priority={true}
+            />
           </NextLink>
         </div>
 
