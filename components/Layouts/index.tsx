@@ -25,8 +25,8 @@ const colors: variants = {
 };
 
 const meta = {
-  title: 'Sławek Jaskulski - Front-end Developer.',
-  description: 'I’m a developer, occasional gamer, definitely not a writer.',
+  title: 'Sławek Jaskulski',
+  description: 'Crafting interfaces',
 };
 
 export function SiteLayout({ children }: { children?: React.ReactNode }) {
