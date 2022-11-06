@@ -102,7 +102,7 @@ export function Code({ children }: { children?: React.ReactNode }) {
     <div className={styles.root}>
       <button onClick={setCopied}>
         <span className={isCopied ? styles.active : (null as any)}>
-          <AnimatePresence initial={false} exitBeforeEnter>
+          <AnimatePresence initial={false} mode="wait">
             <motion.svg
               key={isCopied ? 'copied' : 'empty'}
               fill="none"
