@@ -8,11 +8,7 @@ import data from 'data/work';
 
 const Work: NextPage = () => {
   return (
-    <Layout
-      title="Work"
-      description="Some things I've done in the past."
-      color="red"
-    >
+    <Layout title="Work" description="Things I've done" color="red">
       <Section>
         {data.map((item, i) => {
           const { name, thumbnail, description, technology, url } = item;

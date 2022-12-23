@@ -31,8 +31,9 @@ export const Intro = () => {
         <h1>Sławek Jaskulski</h1>
         <span>I&apos;m a clown {kaomoji}</span>
         <p>
-          My goal is pretty simple, build great things with great people. I like
-          to develop clean and interactive applications with React / Next.js.
+          I'm delighted to have the chance to create user interfaces, construct
+          complex software and web apps, and explore the potential of enhancing
+          user interfaces with unique features.
         </p>
 
         <div className={styles.social}>

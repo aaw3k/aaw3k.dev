@@ -10,7 +10,7 @@ const Stack: NextPage = () => {
   return (
     <Layout
       title="Stack"
-      description="My favorite tools and software that I use every day."
+      description="My favorite tools and software I use daily"
       color="green"
     >
       <Section>
