@@ -17,17 +17,24 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
 
-const interVariable = Inter();
+const interVariable = Inter({ variable: '--inter-font' });
+
+const StyleFont = () => (
+  <style jsx global>{`
+    :root {
+      --font-inter: ${interVariable.style.fontFamily};
+    }
+  `}</style>
+);
 
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout =
     Component.getLayout ||
     ((page) => (
       <ThemeProvider defaultTheme="system">
-        <section className={interVariable.className}>
-          <SiteLayout>{page}</SiteLayout>
-          <Analytics />
-        </section>
+        <StyleFont />
+        <SiteLayout>{page}</SiteLayout>
+        <Analytics />
       </ThemeProvider>
     ));
 
