@@ -31,9 +31,8 @@ export const Intro = () => {
         <h1>Sławek Jaskulski</h1>
         <span>I&apos;m a clown {kaomoji}</span>
         <p>
-          I'm delighted to have the chance to create user interfaces, construct
-          complex software and web apps, and explore the potential of enhancing
-          user interfaces with unique features.
+          Creating software that is interactive and emotionally engaging, with a
+          focus on detail and cutting-edge design.
         </p>
 
         <div className={styles.social}>
