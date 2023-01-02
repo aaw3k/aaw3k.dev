@@ -14,6 +14,7 @@
   --shadow: 0 3px 2px hsl(0 0% 0% / 0.3%), 0 7px 5px hsl(0 0% 0% / 0.5%),
     0 13px 10px hsl(0 0% 0% / 0.7%), 0 22px 18px hsl(0 0% 0% / 0.9%),
     0 42px 33px hsl(0 0% 0% / 1.2%), 0 100px 80px hsl(0 0% 0% / 1.4%);
+  --invert: invert(0);
 
   --background: hsl(0 0% 100%);
   --accents-1: hsl(212 7% 41%);
@@ -33,6 +34,8 @@
 }
 
 [data-theme='dark'] {
+  --invert: invert(1);
+
   --background: hsl(225 9% 9%);
   --accents-1: hsl(213 8% 55%);
   --accents-2: hsl(216 7% 41%);

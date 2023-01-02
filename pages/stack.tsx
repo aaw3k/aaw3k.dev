@@ -15,13 +15,14 @@ const Stack: NextPage = () => {
     >
       <Section>
         <CardLink.List>
-          {data.map((item, i) => {
-            const { name, text, category, url } = item;
+          {data.map((item) => {
+            const { icon, name, description, category, url } = item;
             return (
               <CardLink.Item
-                key={i}
+                icon={icon}
+                key={url}
                 title={name}
-                text={text}
+                description={description}
                 category={category}
                 link={url}
               />

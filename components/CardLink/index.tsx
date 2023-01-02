@@ -1,24 +1,54 @@
 import { Link } from 'components/Link';
 import { isExternalLink } from 'lib/utils';
 import styles from './CardLink.module.css';
+import Image from 'next/image';
 
 type Props = {
-  link: string;
   title?: string;
-  text?: string;
+  description?: string;
+  link: string;
   category?: string;
+  icon?: {
+    image: string;
+    background?: string;
+    invert?: boolean;
+  };
 };
 
 const List = ({ children }: { children?: React.ReactNode }) => {
   return <div className={styles.root}>{children}</div>;
 };
 
-const Item = ({ title, text, link, category }: Props) => {
+const Item = ({ icon, title, description, link, category }: Props) => {
+  const imageSrc = `https://res.cloudinary.com/dxayu6k1d/image/upload/c_scale,h_48/v1672082326/aaw3k.dev/${icon?.image}`;
+
   return (
     <Link to={link} className={styles.item}>
-      <h3>{title}</h3>
-      <span>{category}</span>
-      <p>{text}</p>
+      <div className={icon ? styles.header : ''}>
+        {icon && (
+          <div
+            className={styles.image}
+            style={
+              {
+                '--i-bg': icon?.background ?? 'var(--accents-4)',
+                '--i-filter': icon?.invert ? 'var(--invert)' : 'none',
+              } as React.CSSProperties
+            }
+          >
+            <Image
+              src={imageSrc}
+              alt={title as string}
+              width={48}
+              height={48}
+            />
+          </div>
+        )}
+        <div>
+          <h3>{title}</h3>
+          <span>{category}</span>
+        </div>
+      </div>
+      <p>{description}</p>
 
       {isExternalLink(link) ? (
         <div className={styles.external}>

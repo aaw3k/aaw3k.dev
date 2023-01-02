@@ -4,6 +4,24 @@
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 25ch), 1fr));
 }
 
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+  margin-block-end: 0.5rem;
+}
+
+.image {
+  overflow: hidden;
+  border-radius: calc(var(--radius) / 2);
+  background: var(--i-bg);
+
+  & > img {
+    filter: var(--i-filter, none);
+  }
+}
+
 .item {
   --speed-curve: cubic-bezier(0.4, 0, 0.2, 1);
   background: var(--accents-5);
@@ -30,13 +48,13 @@
     }
   }
 
-  & > h3 {
+  & h3 {
     font-size: 1rem;
     font-weight: 500;
     padding-inline-end: 1.3rem;
   }
 
-  & > :is(span, p) {
+  & :is(span, p) {
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
