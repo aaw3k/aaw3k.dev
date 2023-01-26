@@ -194,4 +194,24 @@ export default [
       background: 'rgba(244, 128, 31, 0.06)',
     },
   },
+  {
+    name: 'Arc Browser',
+    description: 'Customizable web browser',
+    category: 'Software',
+    url: 'https://arc.net/',
+    icon: {
+      image: 'stack/arc_browser_yeiby5.png',
+      background: 'rgba(244, 31, 31, 0.06)',
+    },
+  },
+  {
+    name: 'CleanShot X',
+    description: 'Powerful screenshot tool for Mac',
+    category: 'Tools',
+    url: 'https://cleanshot.com/',
+    icon: {
+      image: 'stack/cleanshot_bnd2p4.png',
+      background: 'rgba(31, 130, 244, 0.06)',
+    },
+  },
 ];

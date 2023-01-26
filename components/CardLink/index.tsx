@@ -20,7 +20,7 @@ const List = ({ children }: { children?: React.ReactNode }) => {
 };
 
 const Item = ({ icon, title, description, link, category }: Props) => {
-  const imageSrc = `https://res.cloudinary.com/dxayu6k1d/image/upload/c_scale,h_48/v1672082326/aaw3k.dev/${icon?.image}`;
+  const imageSrc = `https://cdn.aaw3k.dev/${icon?.image}`;
 
   return (
     <Link to={link} className={styles.item}>

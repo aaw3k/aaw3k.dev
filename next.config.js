@@ -7,7 +7,7 @@ const nextConfig = {
     ],
   },
   images: {
-    domains: ['res.cloudinary.com'],
+    domains: ['cdn.aaw3k.dev'],
   },
 };
 
