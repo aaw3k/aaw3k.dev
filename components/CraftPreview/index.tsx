@@ -40,7 +40,7 @@ export const CraftPreview = ({ title, demo, isDark, links }: Craft) => {
   };
 
   return (
-    <>
+    <div className={styles.root}>
       <nav className={styles.nav}>
         <Link href="/craft" className={styles.link}>
           <CornerDownLeftIcon width={18} height={18} />
@@ -63,9 +63,7 @@ export const CraftPreview = ({ title, demo, isDark, links }: Craft) => {
       </nav>
 
       {loading && (
-        <div className={styles.loader}>
-          <LoadingDots style={{ '--loading-size': '.5rem' } as CSSProperties} />
-        </div>
+        <LoadingDots style={{ '--loading-size': '.5rem' } as CSSProperties} />
       )}
 
       <motion.div variants={screenAnimation} initial="hidden" animate="enter">
@@ -81,6 +79,6 @@ export const CraftPreview = ({ title, demo, isDark, links }: Craft) => {
           })}
         />
       </motion.div>
-    </>
+    </div>
   );
 };

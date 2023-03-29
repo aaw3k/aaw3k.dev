@@ -1,10 +1,11 @@
 .loading {
+  --loading-size: 0.375rem;
   position: relative;
   display: inline-flex;
   gap: 0.15rem;
 
   & span {
-    inline-size: 0.375rem;
+    inline-size: var(--loading-size);
     aspect-ratio: 1;
     border-radius: 50%;
     background: var(--accents-3);

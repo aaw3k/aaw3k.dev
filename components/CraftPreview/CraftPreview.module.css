@@ -1,3 +1,9 @@
+.root {
+  display: grid;
+  place-content: center;
+  min-block-size: 100vh;
+}
+
 .nav {
   position: fixed;
   display: flex;
