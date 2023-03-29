@@ -1,42 +1,32 @@
 import 'styles/global.css';
-
 import type { ReactElement, ReactNode } from 'react';
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 
-import { ThemeProvider } from 'next-themes';
 import { SiteLayout } from 'components/Layouts';
-import { Analytics } from '@vercel/analytics/react';
-import { Inter } from '@next/font/google';
+import { Providers } from 'components/Providers';
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
+  theme?: 'light' | 'dark' | 'dynamic';
 };
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
 
-const interVariable = Inter({ variable: '--inter-font' });
-
-const StyleFont = () => (
-  <style jsx global>{`
-    :root {
-      --font-inter: ${interVariable.style.fontFamily};
-    }
-  `}</style>
-);
-
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout =
     Component.getLayout ||
     ((page) => (
-      <ThemeProvider defaultTheme="system">
-        <StyleFont />
+      <Providers forcedTheme={Component.theme} {...pageProps}>
         <SiteLayout>{page}</SiteLayout>
-        <Analytics />
-      </ThemeProvider>
+      </Providers>
     ));
 
-  return getLayout(<Component {...pageProps} />);
+  return getLayout(
+    <Providers forcedTheme={Component.theme} {...pageProps}>
+      <Component {...pageProps} />
+    </Providers>,
+  );
 }
