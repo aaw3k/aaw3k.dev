@@ -12,6 +12,10 @@ const navData = [
   //   path: '/work',
   // },
   {
+    name: 'Craft',
+    path: '/craft',
+  },
+  {
     name: 'Snippets',
     path: '/snippets',
   },
