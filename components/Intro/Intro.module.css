@@ -19,7 +19,7 @@
 
   & > p {
     color: var(--accents-1);
-    max-inline-size: calc(var(--main-content) - 9rem);
+    max-inline-size: calc(var(--main-content) - 11rem);
     margin-block-start: 2rem;
   }
 }

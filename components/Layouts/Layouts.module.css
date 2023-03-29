@@ -41,6 +41,7 @@
     block-size: 17rem;
     margin: 0 auto;
     border-radius: 10rem;
+    filter: blur(16px);
     box-shadow: 1rem 15rem 18rem var(--r-color, var(--foreground));
     transform: rotate(15deg) translateY(-175%) translateZ(0px);
     z-index: -2;

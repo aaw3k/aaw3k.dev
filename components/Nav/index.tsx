@@ -12,12 +12,16 @@ const navData = [
   //   path: '/work',
   // },
   {
+    name: 'Craft',
+    path: '/craft',
+  },
+  {
     name: 'Snippets',
     path: '/snippets',
   },
   {
-    name: 'Stack',
-    path: '/stack',
+    name: 'Tools',
+    path: '/tools',
   },
 ];
 

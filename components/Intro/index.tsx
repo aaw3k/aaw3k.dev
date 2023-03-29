@@ -31,8 +31,8 @@ export const Intro = () => {
         <h1>Sławek Jaskulski</h1>
         <span>I&apos;m a clown {kaomoji}</span>
         <p>
-          Creating software that is interactive and emotionally engaging, with a
-          focus on detail and cutting-edge design.
+          Creating interactive and immersive software with a focus on detail and
+          utilizing cutting-edge design techniques.
         </p>
 
         <div className={styles.social}>

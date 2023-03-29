@@ -10,6 +10,7 @@ type Props = {
   title?: string;
   description?: string;
   color?: keyof typeof colors;
+  showHeader?: boolean;
   children?: React.ReactNode;
 };
 
@@ -22,6 +23,7 @@ const colors: variants = {
   blue: 'var(--blue)',
   green: 'var(--green)',
   red: 'var(--red)',
+  violet: 'var(--violet)',
 };
 
 const meta = {
@@ -29,7 +31,15 @@ const meta = {
   description: 'Crafting interfaces',
 };
 
-export function SiteLayout({ children }: { children?: React.ReactNode }) {
+export function SiteLayout({
+  children,
+  showNav = true,
+  showFooter = true,
+}: {
+  children: React.ReactNode;
+  showNav?: boolean;
+  showFooter?: boolean;
+}) {
   return (
     <div className={styles.root}>
       <Head>
@@ -43,13 +53,10 @@ export function SiteLayout({ children }: { children?: React.ReactNode }) {
       <div className={styles.background}>
         <div className={styles.gradient} />
       </div>
-      <Nav />
 
-      <main className={styles.main} id="skip">
-        {children}
-      </main>
-
-      <Footer />
+      {showNav && <Nav />}
+      {children}
+      {showFooter && <Footer />}
     </div>
   );
 }
@@ -57,8 +64,9 @@ export function SiteLayout({ children }: { children?: React.ReactNode }) {
 export function Layout({
   title,
   description,
-  children,
   color = 'blue',
+  showHeader = true,
+  children,
 }: Props) {
   const metaTitle = title ? `${title} - Sławek Jaskulski` : '';
   const metaDescription = description ? description : '';
@@ -78,9 +86,10 @@ export function Layout({
         </Head>
       )}
 
-      <Header title={title} description={metaDescription} />
-
-      {children}
+      {showHeader && <Header title={title} description={metaDescription} />}
+      <main className={styles.main} id="skip">
+        {children}
+      </main>
     </>
   );
 }

@@ -1,0 +1,42 @@
+.root {
+  display: grid;
+  place-content: center;
+  min-block-size: 100vh;
+}
+
+.nav {
+  position: fixed;
+  display: flex;
+  inset: auto auto 0 0;
+  inline-size: calc(100% - 2 * 1rem);
+  padding: 1rem;
+  z-index: 1;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.8rem;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-family: var(--font-sans);
+  color: var(--accents-1);
+
+  &:is(:hover, :focus-visible) {
+    background: var(--accents-4);
+  }
+}
+
+.iframe {
+  position: absolute;
+  inset: 0;
+  border: none;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+}

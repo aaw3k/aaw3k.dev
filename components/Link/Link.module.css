@@ -44,12 +44,4 @@
     background: none;
     transition: none;
   }
-
-  & > svg > path {
-    stroke: currentColor;
-
-    &:where(:hover, :focus-visible) {
-      stroke: var(--r-color, var(--blue));
-    }
-  }
 }
