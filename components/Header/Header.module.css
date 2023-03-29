@@ -1,5 +1,6 @@
 .root {
   padding-block-end: 1rem;
+  margin-inline: clamp(1rem, 5%, 2rem);
   margin-block-end: 3rem;
   border-block-end: 1px dashed var(--accents-3);
 
