@@ -4,13 +4,13 @@ import { Layout } from 'components/Layouts';
 import { Section } from 'components/Section';
 import { CardLink } from 'components/CardLink';
 
-import data from 'data/stack';
+import data from 'data/tools';
 
-const Stack: NextPage = () => {
+const Tools: NextPage = () => {
   return (
     <Layout
-      title="Stack"
-      description="My favorite tools and software I use daily"
+      title="Tools"
+      description="My favorite tools for web development, design, and productivity"
       color="green"
     >
       <Section>
@@ -34,4 +34,4 @@ const Stack: NextPage = () => {
   );
 };
 
-export default Stack;
+export default Tools;
