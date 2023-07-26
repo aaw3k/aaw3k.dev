@@ -2,7 +2,11 @@ import { ThemeProvider } from 'next-themes';
 import { Analytics } from '@vercel/analytics/react';
 import { Inter } from '@next/font/google';
 
-const inter = Inter({ variable: '--inter-font' });
+const inter = Inter({
+  variable: '--font-inter',
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 const StyleFont = () => (
   <style jsx global>{`
