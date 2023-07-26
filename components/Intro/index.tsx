@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'components/Link';
+import { GitHubIcon, CodePenIcon, TwitterIcon, XIcon } from 'components/Icons';
 import styles from './Intro.module.css';
 
 const KAOMOJI = ['(. ❛ ᴗ ❛.)', '( ͡• ͜ʖ ͡• )', '(◠◇◠)づ'];
@@ -13,6 +14,7 @@ const getRandomKaomoji = (preclude: string) => {
 };
 
 export const Intro = () => {
+  const [hovered, setHovered] = useState(false);
   const [kaomoji, setKaomoji] = useState(KAOMOJI[0]);
 
   useEffect(() => {
@@ -36,9 +38,28 @@ export const Intro = () => {
         </p>
 
         <div className={styles.social}>
-          <Link href="https://twitter.com/aaw3k">Twitter</Link>
-          <Link href="https://codepen.io/aaw3k">CodePen</Link>
-          <Link href="https://github.com/aaw3k">GitHub</Link>
+          <div
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+            onFocus={() => setHovered(true)}
+            onBlur={() => setHovered(false)}
+          >
+            <Link href="https://twitter.com/aaw3k">
+              {hovered ? (
+                <XIcon width={24} height={24} />
+              ) : (
+                <TwitterIcon width={24} height={24} />
+              )}
+            </Link>
+          </div>
+          <div aria-hidden="true" className={styles.line}></div>
+          <Link href="https://codepen.io/aaw3k">
+            <CodePenIcon width={24} height={24} />
+          </Link>
+          <div aria-hidden="true" className={styles.line}></div>
+          <Link href="https://github.com/aaw3k">
+            <GitHubIcon width={24} height={24} />
+          </Link>
         </div>
       </div>
     </div>

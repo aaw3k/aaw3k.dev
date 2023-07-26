@@ -25,21 +25,25 @@
 }
 
 .social {
+  position: relative;
   display: flex;
   gap: 0.5rem;
   margin-block-start: 1.5rem;
 
-  & > a {
-    background: var(--accents-5);
+  & a {
+    display: flex;
+    align-items: center;
+    background: var(--a-background, transparent);
     color: var(--accents-2);
     font-size: 0.875rem;
-    padding: 0.25rem 0.7rem;
-    border: 1px solid var(--a-border, var(--accents-4));
-    border-radius: var(--radius);
+    padding: 0.25rem;
+    border: 1px solid var(--a-border, transparent);
+    border-radius: calc(var(--inline-radius) * 2);
     box-shadow: var(--a-shadow, none);
     transform: scaleX(var(--scale-x, 1)) scaleY(var(--scale-y, 1));
 
     &:hover {
+      --a-background: var(--background);
       --a-border: var(--accents-3);
       --a-shadow: var(--shadow);
       --scale-x: 1.02;
@@ -50,4 +54,31 @@
       transition: transform 0.15s ease-in-out;
     }
   }
+}
+
+.line {
+  --color: var(--accents-3);
+  --block-size: 1px;
+  --inline-size: 4px;
+  --fade-stop: 90%;
+  --offset: -4px;
+  inline-size: var(--block-size);
+  block-size: var(--offset);
+  position: relative;
+  background: linear-gradient(
+    to bottom,
+    var(--color),
+    var(--color) 50%,
+    transparent 0,
+    transparent
+  );
+  background-size: var(--block-size) var(--inline-size);
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(
+      to top,
+      var(--background) var(--fade-stop),
+      transparent
+    ),
+    linear-gradient(to bottom, var(--background) var(--fade-stop), transparent),
+    linear-gradient(black, black);
 }
