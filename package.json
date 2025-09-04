@@ -29,7 +29,7 @@
     "@types/react": "^18.0.31",
     "autoprefixer": "^10.4.14",
     "css-has-pseudo": "^5.0.2",
-    "esbuild": "^0.17.14",
+    "esbuild": "^0.25.0",
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
     "eslint-config-prettier": "^8.8.0",
